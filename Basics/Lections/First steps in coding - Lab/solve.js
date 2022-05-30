@@ -1,0 +1,6 @@
+function solve() {
+if(){
+
+}
+}
+solve();
