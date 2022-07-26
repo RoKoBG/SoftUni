@@ -1,23 +1,19 @@
-function meetings(data) {
-    let result = {};
-    for(let line of data){
-        let [day, name] = line.split(" ");
-
-        if(result.hasOwnProperty(day)){
-            console.log(`Conflict on ${day}!`);
-        }else{
-            result[day] = name;
-            console.log(`Scheduled for ${day}`);
-        }
+function phoneBook(input) {
+    let phoneBooks = {};
+    for(let line of input){
+        let tokens = line.split(" ");
+        let name = tokens[0];
+        let phoneNum  = tokens[1];
+        phoneBooks[name]=phoneNum;
+    }
+    for (let key in phoneBooks){
+        console.log(key, "->", phoneBooks[key]);
     }
 
-for(let [key,value] of Object.entries(result)){
-    console.log(`${key} -> ${value}`);
-}
+} phoneBook(['Tim 0834212554',
 
-} meetings([
-    'Monday Peter',
-    'Wednesday Bill',
-    'Monday Tim',
-    'Friday Tim'
-]);
+    'Peter 0877547887',
+
+    'Bill 0896543112',
+
+    'Tim 0876566344']);
